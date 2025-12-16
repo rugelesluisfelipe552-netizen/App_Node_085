@@ -1,4 +1,4 @@
-const Servicio = require('../models/Servicio');
+const Servicio = require('../models/servicios');
 
 const servicioCtrl = {};
 

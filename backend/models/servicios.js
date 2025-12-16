@@ -8,4 +8,4 @@ const ServicioSchema = new Schema({
   estado: { type: String, required: true }
 });
 
-module.exports = mongoose.model('Servicio', ServicioSchema);
+module.exports = mongoose.model('Servicios', ServicioSchema);
