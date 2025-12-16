@@ -37,6 +37,9 @@ app.use(cors({ origin: 'http://localhost:3001' }));
 
 // Rutas para empleados
 app.use('/api/empleados', require('./routes/empleado.routes'));
+// Rutas para los servicios
+app.use('/api/servicios', require('./routes/servicio.routes'));
+
 
 /**
  * INICIO DEL SERVIDOR
