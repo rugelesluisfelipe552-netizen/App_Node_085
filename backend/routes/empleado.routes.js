@@ -1,25 +1,37 @@
 /**
+ * RUTAS DE EMPLEADOS
+ * 
+ * Este archivo define las rutas de la API para empleados.
+ * Cada ruta se conecta con un método del controlador.
+ */
 
-*
-
-* creamos un módulo por eso utilizamos express
-
-*/
-
+// Se importa Express
 const express = require('express');
 
+// Se crea el router de Express
 const router = express.Router();
 
+// Se importa el controlador de empleados
 const empleadoCtrl = require('../controllers/empleado.controller');
 
-router.get('/', empleadoCtrl.getEmpleados); // Rutas más limpias (obtener empleados)
+/**
+ * RUTAS DEL CRUD
+ */
 
-router.post('/', empleadoCtrl.createEmpleados);//guardar
+// Obtener todos los empleados
+router.get('/', empleadoCtrl.getEmpleados); 
 
-router.get('/:id', empleadoCtrl.getUnicoEmpleado);// obtiene un único empleado
+// Crear un nuevo empleado
+router.post('/', empleadoCtrl.createEmpleados);
 
-router.put('/:id',empleadoCtrl.editarEmpleado); //Actualizar datos (uno a la vez)
+// Obtener un empleado por su ID
+router.get('/:id', empleadoCtrl.getUnicoEmpleado);
 
+// Actualizar un empleado por su ID
+router.put('/:id', empleadoCtrl.editarEmpleado);
+
+// Eliminar un empleado por su ID
 router.delete('/:id', empleadoCtrl.eliminarEmpleado);
 
+// Se exportan las rutas
 module.exports = router;
